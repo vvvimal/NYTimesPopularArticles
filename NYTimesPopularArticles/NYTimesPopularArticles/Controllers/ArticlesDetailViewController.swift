@@ -7,15 +7,22 @@
 //
 
 import UIKit
+import WebKit
 
 class ArticlesDetailViewController: UIViewController {
 
+    var alert : UIAlertController?
+
+    @IBOutlet weak var webView:WKWebView?
+    
     let viewModel = ArticlesDetailViewModel()
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        setupUIDetails()
+
     }
 
     /// Setup article detail
@@ -23,4 +30,29 @@ class ArticlesDetailViewController: UIViewController {
     func setupArticle(data:ArticleDataModel){
         viewModel.articleDetail = data
     }
+    
+    func setupUIDetails(){
+        self.activityStartAnimating()
+        self.title = viewModel.articleTitle()
+        if let request = viewModel.webViewURLRequest(){
+            viewModel.cleanCache()
+            webView?.load(request)
+        }
+        else{
+            alert = self.showAlert(withTitle: "Error", message: "No valid request.")
+        }
+
+    }
+}
+
+extension ArticlesDetailViewController:WKNavigationDelegate{
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!){
+        self.activityStopAnimating()
+    }
+
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error){
+        self.activityStopAnimating()
+        alert = self.showAlert(withTitle: "Error", message: error.localizedDescription)
+    }
+
 }

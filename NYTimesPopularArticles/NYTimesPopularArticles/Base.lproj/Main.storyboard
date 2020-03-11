@@ -30,15 +30,34 @@
                     <view key="view" contentMode="scaleToFill" id="svH-Pt-448">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xrn-sD-cBO">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Xrn-sD-cBO" firstAttribute="top" secondItem="VUw-jc-0yf" secondAttribute="top" id="B8W-8A-VfF"/>
+                            <constraint firstItem="Xrn-sD-cBO" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" id="GY3-pP-REA"/>
+                            <constraint firstItem="Xrn-sD-cBO" firstAttribute="trailing" secondItem="VUw-jc-0yf" secondAttribute="trailing" id="kgB-ko-r4b"/>
+                            <constraint firstItem="Xrn-sD-cBO" firstAttribute="bottom" secondItem="VUw-jc-0yf" secondAttribute="bottom" id="ss6-Xe-Xo7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="VUw-jc-0yf"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
+                    <connections>
+                        <outlet property="webView" destination="Xrn-sD-cBO" id="Ef4-8h-kwa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="709" y="129"/>
+            <point key="canvasLocation" x="708.69565217391312" y="128.57142857142856"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">

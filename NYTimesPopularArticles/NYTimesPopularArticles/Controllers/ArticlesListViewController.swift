@@ -10,6 +10,8 @@ import UIKit
 
 class ArticlesListViewController: UITableViewController {
     
+    var alert : UIAlertController?
+
     let viewModel = ArticlesListViewModel()
 
     var detailViewController: ArticlesDetailViewController? = nil
@@ -89,7 +91,7 @@ class ArticlesListViewController: UITableViewController {
     func setError(error:APIError){
         DispatchQueue.main.async() { () -> Void in
             self.activityStopAnimating()
-            _ = self.showAlert(withTitle: "Error", message: error.message)
+            alert = self.showAlert(withTitle: "Error", message: error.message)
         }
     }
 
