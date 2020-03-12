@@ -9,6 +9,7 @@
 import UIKit
 
 
+/// Netwrok data
 struct NetworkData{
     static let kAPIKey = "api-key=4A6nlbC418RmJrsjP5v4hyRSSU9WQiQC"
     static let kBaseURL = "http://api.nytimes.com/"
@@ -46,6 +47,7 @@ struct AppSegueIdentifierStrings{
     static let kArticlesDetailViewControllerSegue = "ArticlesDetailViewControllerSegue"
 }
 
+/// HTTP Method for request
 enum HTTPMethod:String{
     case get = "GET"
     case post = "POST"

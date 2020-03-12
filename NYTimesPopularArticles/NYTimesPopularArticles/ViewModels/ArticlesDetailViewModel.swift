@@ -13,6 +13,7 @@ class ArticlesDetailViewModel: NSObject {
     
     var articleDetail : ArticleDataModel? = nil
     
+    /// Clean cache for removing webview cache, as it was asking for signup after ever webview load
     func cleanCache() {
         HTTPCookieStorage.shared.removeCookies(since: Date.distantPast)
         print("[WebCacheCleaner] All cookies deleted")
@@ -25,6 +26,7 @@ class ArticlesDetailViewModel: NSObject {
         }
     }
     
+    /// Webview request from articleDetail
     func webViewURLRequest() -> URLRequest?{
         if let urlString = articleDetail?.url, let url = URL.init(string: urlString) {
             return URLRequest.init(url: url)
@@ -32,7 +34,8 @@ class ArticlesDetailViewModel: NSObject {
         return nil
     }
     
+    /// Article title
     func articleTitle() -> String{
-        articleDetail?.title ?? ""
+        articleDetail?.title ?? "Detail"
     }
 }

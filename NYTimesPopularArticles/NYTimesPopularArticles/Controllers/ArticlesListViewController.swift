@@ -31,11 +31,7 @@ class ArticlesListViewController: UITableViewController {
     
     /// Set up UI elements
     func setupView(){
-        self.title = "Popular Articles"
-        if let split = splitViewController {
-            let controllers = split.viewControllers
-            detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? ArticlesDetailViewController
-        }
+        self.title = "NY Times Most Popular"
     }
     
     /// Setup Table View properties
@@ -107,9 +103,10 @@ class ArticlesListViewController: UITableViewController {
         }
     }
 
-    // MARK: - Table View
 
 }
+
+// MARK: - Table View
 
 extension ArticlesListViewController{
     
@@ -177,6 +174,4 @@ extension ArticlesListViewController{
         let article = viewModel.articleAt(index: indexPath)
         performSegue(withIdentifier: AppSegueIdentifierStrings.kArticlesDetailViewControllerSegue, sender: article)
     }
-    
-    
 }

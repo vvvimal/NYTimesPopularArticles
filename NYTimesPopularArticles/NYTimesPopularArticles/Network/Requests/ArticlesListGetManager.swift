@@ -13,7 +13,6 @@ class ArticlesListGetRequest: BaseRequest {
     var params : [String : Any]? = nil
     var urlString: String = NetworkData.kBaseURL + NetworkData.kMostViewedEndpoint + NetworkData.kAPIKey
     var httpHeader = [String : String]()
-
 }
 
 class ArticlesListGetManager: NetworkManager {

@@ -31,21 +31,25 @@ class ArticlesDetailViewController: UIViewController {
         viewModel.articleDetail = data
     }
     
+    /// Set up UI 
     func setupUIDetails(){
-        self.title = viewModel.articleTitle()
+        self.navigationItem.title = viewModel.articleTitle()
     }
     
+    /// Set up Webview
     func setupWebview(){
-        webView?.accessibilityLabel = "ArticlesDetailWebView"
-        webView?.navigationDelegate = self
-        self.activityStartAnimating()
-        if let request = viewModel.webViewURLRequest(){
-            viewModel.cleanCache()
-            webView?.load(request)
-        }
-        else{
-            self.activityStopAnimating()
-            alert = self.showAlert(withTitle: "Error", message: "No valid request.")
+        if viewModel.articleDetail != nil {
+            webView?.accessibilityLabel = "ArticlesDetailWebView"
+            webView?.navigationDelegate = self
+            self.activityStartAnimating()
+            if let request = viewModel.webViewURLRequest(){
+                viewModel.cleanCache()
+                webView?.load(request)
+            }
+            else{
+                self.activityStopAnimating()
+                alert = self.showAlert(withTitle: "Error", message: "No valid request.")
+            }
         }
     }
 }

@@ -34,6 +34,7 @@ class ArticlesListViewTests: BaseTests {
     /// Test load view of list view
     func testLoadView() {
         XCTAssertNotNil(vc)
+        XCTAssertEqual(vc.title, "NY Times Most Popular", "Invalid title")
         XCTAssertNotNil(vc.tableView)
     }
     

@@ -44,7 +44,7 @@ class ArticlesDetailViewTests: BaseTests {
     func testTitleView(){
         vc.setupArticle(data: article)
         vc.loadViewIfNeeded()
-        XCTAssertEqual(article.title, vc.title, "Title and image title don't match")
+        XCTAssertEqual(vc.viewModel.articleTitle(), vc.navigationItem.title, "Title and article title don't match")
     }
     
     /// Test url present
