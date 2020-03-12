@@ -33,8 +33,13 @@ Popular articles on NY Times
 4. ArticlesUITests - UI Test for pull to refresh
 
 
-## Prerequisite for Testcases
+## Notes
+
+### Search bar not implemented due to time constraints.
+
+### Prerequisite for Testcases
 Please delete the app from simulator before running the test cases. 
 
-## Limitations for Testcases
+### Limitations for Testcases
 The UI test case are written for iPhone. It fails for iPad because of the splitview working differently on iPhone and iPad.
+
