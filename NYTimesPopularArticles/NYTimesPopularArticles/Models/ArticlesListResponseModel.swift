@@ -18,7 +18,7 @@ struct ArticlesListResponseModel: Codable {
 struct ArticleDataModel:Codable {
     let uri:String?
     let url:String?
-    let id:Int??
+    let id:Int?
     let asset_id:Int?
     let source: String?
     let published_date:String?

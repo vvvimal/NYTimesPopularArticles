@@ -26,7 +26,7 @@
         <!--Detail-->
         <scene sceneID="yUG-lL-AsK">
             <objects>
-                <viewController title="Detail" id="JEX-9P-axG" customClass="ArticlesDetailViewController" customModule="NYTimesPopularArticles" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ArticlesDetailViewController" title="Detail" id="JEX-9P-axG" customClass="ArticlesDetailViewController" customModule="NYTimesPopularArticles" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="svH-Pt-448">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,7 +50,7 @@
                         <viewLayoutGuide key="safeArea" id="VUw-jc-0yf"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
+                    <navigationItem key="navigationItem" id="mOI-FS-AaM"/>
                     <connections>
                         <outlet property="webView" destination="Xrn-sD-cBO" id="Ef4-8h-kwa"/>
                     </connections>
@@ -76,7 +76,7 @@
         <!--Viewed Articles-->
         <scene sceneID="smW-Zh-WAh">
             <objects>
-                <tableViewController title="Viewed Articles" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="ArticlesListViewController" customModule="NYTimesPopularArticles" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ArticlesListViewController" title="Viewed Articles" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="ArticlesListViewController" customModule="NYTimesPopularArticles" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="r7i-6Z-zg0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -87,7 +87,7 @@
                             <outlet property="delegate" destination="7bK-jq-Zjz" id="RA6-mI-bju"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Viewed Articles" id="Zdf-7t-Un8"/>
+                    <navigationItem key="navigationItem" id="Zdf-7t-Un8"/>
                     <connections>
                         <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="ArticlesDetailViewControllerSegue" id="Qnm-B7-m4J"/>
                     </connections>
@@ -115,6 +115,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Tll-UG-LXB"/>
+        <segue reference="Qnm-B7-m4J"/>
     </inferredMetricsTieBreakers>
 </document>

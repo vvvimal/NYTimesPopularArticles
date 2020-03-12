@@ -91,7 +91,7 @@ class ArticlesListViewController: UITableViewController {
     func setError(error:APIError){
         DispatchQueue.main.async() { () -> Void in
             self.activityStopAnimating()
-            alert = self.showAlert(withTitle: "Error", message: error.message)
+            self.alert = self.showAlert(withTitle: "Error", message: error.message)
         }
     }
 
@@ -143,7 +143,7 @@ extension ArticlesListViewController{
         if let article = viewModel.articleAt(index: indexPath){
             cell.article = article
         }
-        
+        cell.isAccessibilityElement = true
         
         return cell
     }

@@ -22,7 +22,7 @@ class ArticlesDetailViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setupUIDetails()
-
+        setupWebview()
     }
 
     /// Setup article detail
@@ -32,16 +32,21 @@ class ArticlesDetailViewController: UIViewController {
     }
     
     func setupUIDetails(){
-        self.activityStartAnimating()
         self.title = viewModel.articleTitle()
+    }
+    
+    func setupWebview(){
+        webView?.accessibilityLabel = "ArticlesDetailWebView"
+        webView?.navigationDelegate = self
+        self.activityStartAnimating()
         if let request = viewModel.webViewURLRequest(){
             viewModel.cleanCache()
             webView?.load(request)
         }
         else{
+            self.activityStopAnimating()
             alert = self.showAlert(withTitle: "Error", message: "No valid request.")
         }
-
     }
 }
 
